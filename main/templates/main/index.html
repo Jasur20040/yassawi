@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Informatics</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/428/428001.png">
+        <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+
+    </head>
+
+    <body>
+
+<div class="header"> 
+            <nav>
+                <div class="topnav">
+                  <a href="{% url 'index'  %}"><i class="fa fa-home"></i> Басты бет</a>
+                    <a href="#"><i class="fa fa-newspaper-o"></i> Біз туралы</a>
+                    <a href="{% url 'kyrss' %}"><i class="fa fa-book"></i> Курстар</a>
+                    <a href="{% url 'logins'  %}" style="float:right;  padding: 14px 20px; " > Шығу</a>
+                    <a href="{% url 'user'  user.id %}" style="float:right;  padding: 14px 20px; " ><i class="fa fa-user" ></i> Портфолио </a>
+                </div>
+
+            </nav>
+            <div class="titlet">
+                <div class="titletext">
+                    <p class="text1">TRAIN</p>
+                    <p>Onlain oqytý platformasy</p>
+                </div>
+                
+                <div class="imghead">
+                    <img src="https://i.pinimg.com/originals/49/84/c0/4984c0ac41b13002de2873e622efa63c.gif" width="520" height="400">
+                </div>
+            </div>
+</div>
+
+<div class="divider">Maqsatı</div>      
+        
+<div class="row">
+    
+      <div class="column">
+        <div class="card">
+          <div class="container" style="background-color:#009ee0">
+              <div class="roww">
+                <div class="column-33">
+                  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/39a0bf40376075.577d07f9e0d1b.gif" alt="App" width="585" height="721">
+                </div>
+                <div class="column-66">
+                  <h1 class="xlarge-font"><b>TRAIN</b></h1>
+                  <h1 class="large-font" style="color:#30558a;"><b>Бұл сайттан не үйренемін?</b></h1>
+                  <p class="font"> Бұл сайт арқылы қолданушы "Информатика" пәні бойынша сабақтар үйренеді, сонымен қатар ҰБТ-ға дайындалуға мүмкіндік береді. Яғни қолданушы мектеп бағдарламасындағы сабақтарды оқып, практика жүзінде іске асырады. Жәнеде түрлі тест тапсырмаларын орындайды.</p>
+                  <button class="button" style="background-color:#30558a" ><a class="buttontirkely" href="#A1" style="text-decoration: none">Тіркелу</a></button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>     
+
+<div class="divider">Sabaqtar</div>           
+
+
+
+<div class="cardin">
+    {% for k in kyrs %}
+<div class="cardinfor" style = "width: 250px; height:350px "><br>
+  <img style = "width: 240px; height:200px " src="{{ k.img.url }}" alt="Avatar" style="width:100%; border-radius:20px">
+  <div class="containercard">
+    <h4><b>{{k.name}}</b></h4>
+    <p>{{k.money}} тг</p>
+  </div>
+</div>
+    {% endfor %}
+</div>
+
+
+
+<footer>
+  <div class="f-item-con">
+      <div class="app-info">
+          <span class='app-name'>
+              <span class='app-initial'>TR</span>AIN
+          </span>
+          <p>TRAIN <strong>онлайн оқыту платформасы. Білім алуға деген мүмкіншілік. </strong> ХХІ ғасырдың жарқын жетістігі. </p>
+      </div>
+      <div class="column-center-mobile w-col w-col-4">
+    <h3 class="footer-titles">Сілтемелер</h3><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg" width="20" alt="Twitter icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg" width="20" alt="Instagram icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg" width="20" alt="Facebook Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img img class="imgfooter"  src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg" width="20" alt="LinkedIn Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img img class="imgfooter"  src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg" width="20" alt="Pinterest Icon" class=""></a>
+    <p class="footer-description">Маған электрондық хат жіберіңіз: <a href=""><strong class="link-email-footer">gulibaiburi2004@gmail.com</strong></a><br></p>
+  </div>
+      <div class="g-i-t">
+          <div class="footer-title">Пікір қалдырыңыз</div>
+          <form action="/" method="post" class="space-y-2">
+              <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Аты' />
+              <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
+              <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
+                  placeholder='Пікір немесе Ұсыныс'></textarea>
+              <button type="submit" class='f-btn'>Қабылдау</button>
+          </form>
+      </div>
+  </div>
+  <div class='cr-con'>Copyright &copy; 2023 | Made by DGA</div>
+</footer>
+<!--    <script src="{% static 'js/main.js' %}"></script>-->
+    </body>
+</html>

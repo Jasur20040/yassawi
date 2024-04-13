@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.test-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.task {
+  border-radius: 20px;
+  width: calc(33.33% - 40px);
+  position: relative;
+  height: 220px;
+  perspective: 30rem;
+  margin: 15px;
+
+  &:hover {
+    .front,
+    .back {
+      box-shadow: 0px 0px 20px -1px #000;
+    }
+  }
+
+  ol {
+    margin: 0;
+    li + li {
+      padding-top: 10px;
+    }
+  }
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s, box-shadow 0.2s linear;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px -1px #080808;
+}
+.front {
+  background-color: #00bcd4;
+}
+.back {
+  transform: rotateX(180deg);
+}
+.task-used:checked ~ .front {
+  transform: rotateX(180deg);
+}
+.task-used:checked ~ .back {
+  transform: rotateX(360deg);
+}
+
+.task-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.task-used {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  opacity: 0;
+}
+
+.task-used:checked ~ .task-check {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s 2s linear;
+}
+
+.task-used:checked ~ .studname {
+  opacity: 1;
+  visibility: visible;
+}
+
+.task-check:checked {
+  opacity: 0 !important;
+  & ~ .back {
+    transform: rotateX(180deg);
+  }
+  & ~ .front {
+    transform: rotateX(0);
+  }
+  & ~ .front:after {
+    content: "";
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("https://i.pinimg.com/originals/21/3d/c0/213dc0ed0a2e69d1978c75bfbcff903a.png");
+    background-size: contain;
+    background-position: 50% 0;
+    z-index: 20;
+  }
+
+  & ~ .studname {
+    pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.studname {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25px;
+  z-index: 25;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s 1s;
+}

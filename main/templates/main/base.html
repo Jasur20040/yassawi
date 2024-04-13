@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Informatics</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/428/428001.png">
+        <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bilet.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style-user.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta charset="UTF-8">
+<!--        <script>-->
+<!--            function openNav() {-->
+<!--              document.getElementById("mySidebar").style.width = "250px";-->
+<!--              document.getElementById("main").style.marginLeft = "250px";-->
+<!--            }-->
+
+<!--            function closeNav() {-->
+<!--              document.getElementById("mySidebar").style.width = "0";-->
+<!--              document.getElementById("main").style.marginLeft= "0";-->
+<!--            }-->
+
+<!--            const signUpButton = document.getElementById('signUp');-->
+<!--            const signInButton = document.getElementById('signIn');-->
+<!--            const container = document.getElementById('singcontainer');-->
+
+<!--            signUpButton.addEventListener('click', () => {-->
+<!--                container.classList.add("right-panel-active");-->
+<!--            });-->
+
+<!--            signInButton.addEventListener('click', () => {-->
+<!--                container.classList.remove("right-panel-active");-->
+<!--            });-->
+<!--        </script>-->
+
+    </head>
+
+    <body>
+    {% block content %}
+    {% endblock content %}
+<footer>
+  <div class="f-item-con">
+      <div class="app-info">
+          <span class='app-name'>
+              <span class='app-initial'>TR</span>AIN
+          </span>
+          <p>TRAIN <strong>онлайн оқыту платформасы. Білім алуға деген мүмкіншілік. </strong> ХХІ ғасырдың жарқын жетістігі. </p>
+      </div>
+      <div class="column-center-mobile w-col w-col-4">
+    <h3 class="footer-titles">Сілтемелер</h3><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg" width="20" alt="Twitter icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg" width="20" alt="Instagram icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img class="imgfooter" src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg" width="20" alt="Facebook Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img img class="imgfooter"  src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg" width="20" alt="LinkedIn Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img img class="imgfooter"  src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg" width="20" alt="Pinterest Icon" class=""></a>
+    <p class="footer-description">Маған электрондық хат жіберіңіз: <a href=""><strong class="link-email-footer">gulibaiburi2004@gmail.com</strong></a><br></p>
+  </div>
+      <div class="g-i-t">
+          <div class="footer-title">Пікір қалдырыңыз</div>
+          <form action="/" method="post" class="space-y-2">
+              <input type="text" name="g-name" class="g-inp" id="g-name" placeholder='Аты' />
+              <input type="email" name="g-email" class="g-inp" id="g-email" placeholder='Email' />
+              <textarea type="text" name="g-msg" class="g-inp h-40 resize-none" id="g-msg"
+                  placeholder='Пікір немесе Ұсыныс'></textarea>
+              <button type="submit" class='f-btn'>Қабылдау</button>
+          </form>
+      </div>
+  </div>
+  <div class='cr-con'>Copyright &copy; 2023 | Made by DGA</div>
+</footer>
+<!--    <script src="{% static 'js/main.js' %}"></script>-->
+    </body>
+</html>
